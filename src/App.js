@@ -9,7 +9,7 @@ class App extends Component {
           <h1 className="App-logo" style={{ position: `absolute`, top: 0 }}>
             Johnnie Regalado
           </h1>
-          <div className="Nav">
+          <div className="Nav rotate">
             <h2>About</h2>
             <h2>Resume</h2>
             <h2>OddRad.io</h2>
