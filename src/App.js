@@ -1,25 +1,20 @@
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import './App.scss';
+
+// Pages
+import Home from './components/home';
+import About from './components/about';
+import Resume from './components/resume';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-logo" style={{ position: `absolute`, top: 0 }}>
-            Johnnie Regalado
-          </h1>
-          <div className="Nav rotate">
-            <h2>About</h2>
-            <h2>Resume</h2>
-            <h2>OddRad.io</h2>
-            <h2>Listen2gether</h2>
-          </div>
-          <p style={{ position: `absolute`, bottom: 0 }}>
-            a playground and portfolio
-          </p>
-        </header>
-      </div>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/me" component={About} />
+        <Route exact path="/resume" component={Resume} />
+      </Switch>
     );
   }
 }
