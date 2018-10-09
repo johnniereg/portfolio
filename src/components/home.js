@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Home extends Component {
   render() {
@@ -9,10 +10,12 @@ class Home extends Component {
             Johnnie Regalado
           </h1>
           <div className="Nav rotate">
-            <h2>About</h2>
-            <h2>Resume</h2>
-            <h2>OddRad.io</h2>
-            <h2>Listen2gether</h2>
+            <div>
+              <Link to="/me">About</Link>
+            </div>
+            <div>
+              <Link to="/resume">Resume</Link>
+            </div>
           </div>
           <p style={{ position: `absolute`, bottom: 0 }}>
             a playground and portfolio
