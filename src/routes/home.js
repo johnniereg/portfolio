@@ -10,12 +10,15 @@ class Home extends Component {
             Johnnie Regalado
           </h1>
           <div className="Nav rotate">
-            <div>
-              <Link to="/me">About</Link>
-            </div>
-            <div>
-              <Link to="/resume">Resume</Link>
-            </div>
+            <Link className="nav-item" to="/resume">
+              Resume
+            </Link>
+            <Link className="nav-item" to="/me">
+              About
+            </Link>
+            <Link className="nav-item" to="/tracks">
+              Tracks
+            </Link>
           </div>
           <p style={{ position: `absolute`, bottom: 0 }}>
             a playground and portfolio
