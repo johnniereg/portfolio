@@ -22,7 +22,6 @@ class Tracks extends Component {
 
   render() {
     let tracks = this.state.tracks;
-    console.log(tracks);
 
     return (
       <div className="About">
