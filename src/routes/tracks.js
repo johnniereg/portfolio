@@ -10,7 +10,7 @@ class Tracks extends Component {
 
   componentDidMount() {
     fetch(
-      'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=johnniereg&api_key=907c0957fc6f58a0cdc5a95eacadb9bf&format=json&extended=1&limit=200http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=johnniereg&api_key=30ddf0e6d5fcc07ad9eb72f57214dbbd&format=json&extended=1&limit=200&from=1514764800'
+      'https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=johnniereg&api_key=907c0957fc6f58a0cdc5a95eacadb9bf&format=json&extended=1&limit=200http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=johnniereg&api_key=30ddf0e6d5fcc07ad9eb72f57214dbbd&format=json&extended=1&limit=200&from=1514764800'
     )
       .then(function(response) {
         return response.json();
