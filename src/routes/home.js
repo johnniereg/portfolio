@@ -20,7 +20,7 @@ class Home extends Component {
           </Link>
         </nav>
         <footer>
-          <p>a playground and portfolio</p>
+          <p>a portfolio and playground</p>
         </footer>
       </div>
     );
