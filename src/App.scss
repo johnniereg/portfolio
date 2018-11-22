@@ -2,40 +2,45 @@
 @import 'styles/variables';
 @import 'styles/helpers';
 
-.Home {
-  text-align: center;
-}
-
-.Nav {
-  a {
-    color: #fff;
-    text-decoration: none;
-  }
-
-  .nav-item {
-    display: block;
-    font-size: 2rem;
-    transition: 0.2s ease all;
-
-    &:hover {
-      font-size: 2.5rem;
-      font-weight: 800;
-    }
-  }
-}
-
-.Home-header {
-  background-color: $primary-color;
-  min-height: 100vh;
+.home {
+  height: 100vh;
+  padding-left: 2rem;
+  padding-right: 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: $font-stack;
-  font-size: calc(10px + 2vmin);
-  color: $secondary-color;
+  justify-content: space-between;
 }
 
-.Home-link {
-  color: #61dafb;
+header {
+  display: flex;
+
+  .nameplate {
+    font-family: $font-stack-primary;
+    letter-spacing: .1em;
+    text-transform: lowercase;
+  }
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .nav-item {
+    width: 100%;
+    text-align: center;
+  }
+
+  a {
+    font-family: $font-stack-secondary;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: flex-end;
+
+  p {
+    font-family: $font-stack-secondary;
+  }
 }
