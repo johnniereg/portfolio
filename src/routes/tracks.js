@@ -28,9 +28,10 @@ class Tracks extends Component {
     return (
       <div className="Tracks">
         <header>
-          <h1 className="nameplate">Tracks</h1>
+          <h1 className="nameplate">Listening Habits</h1>
         </header>
         <main className="tracks-container">
+          <h2>Recently Played</h2>
           {tracks.map(function(track, index) {
             return (
               <p key={index}>

@@ -9,15 +9,18 @@ class Home extends Component {
           <h1 className="nameplate">Johnnie Regalado</h1>
         </header>
         <nav>
-          <Link className="nav-item" to="/me">
+          {/* <Link className="nav-item" to="/me">
             About
           </Link>
           <Link className="nav-item" to="/resume">
             Resume
-          </Link>
+          </Link> */}
           <Link className="nav-item" to="/tracks">
-            Tracks
+            Listening Habits
           </Link>
+          <a className="nav-item" href="http://oddrad.io/">
+            Odd Radio
+          </a>
         </nav>
         <footer>
           <p>a portfolio and playground</p>
