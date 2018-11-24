@@ -26,17 +26,22 @@ class Tracks extends Component {
     let tracks = this.state.tracks;
 
     return (
-      <div className="About">
-        <header className="Tracks-header">Tracks</header>
-        <div className="tracks-container">
+      <div className="Tracks">
+        <header>
+          <h1 className="nameplate">Tracks</h1>
+        </header>
+        <main className="tracks-container">
           {tracks.map(function(track, index) {
             return (
-              <div key={index}>
+              <p key={index}>
                 "{track.name}" by {track.artist.name}
-              </div>
+              </p>
             );
           })}
-        </div>
+        </main>
+        <footer>
+          <p>Follow on Spotify</p>
+        </footer>
       </div>
     );
   }

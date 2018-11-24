@@ -2,9 +2,13 @@
 @import 'styles/variables';
 @import 'styles/helpers';
 
-.home {
-  height: 100vh;
+body {
   background-color: #f2f2f2;
+}
+
+.Home,
+.Tracks {
+  height: 100vh;
   padding-left: 2rem;
   padding-right: 2rem;
   display: flex;
@@ -14,6 +18,7 @@
 
 header {
   display: flex;
+  justify-content: flex-start;
 
   .nameplate {
     font-family: $font-stack-primary;
@@ -34,19 +39,19 @@ nav {
     margin: 2rem 0;
     text-align: center;
     background-color: #0a1a1a;
-      border-radius: 4px;
-
+    border-radius: 2px;
     transition: all 0.3s linear;
 
     @media screen and (max-width: 768px){
-      background-color: transparent;
-      text-decoration: underline;
+      color: #f2f2f2;
+      font-size: 2rem;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: #f2f2f2;
       padding: 0;
-      margin: 0;
+      border-radius: 4px;
     }
   }
 
@@ -58,12 +63,30 @@ nav {
   }
 }
 
+.tracks-container {
+  display: block;
+  position: relative;
+  max-height: 80vh;
+  overflow: scroll;
+  text-align: center;
+
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 25%;
+    background: linear-gradient(to top, transparent, #f2f2f2 95%);
+  }
+}
+
 footer {
   display: flex;
   justify-content: flex-end;
 
   p {
-    font-family: $font-stack-secondary;
+    font-family: $font-stack-primary;
     color: #0a1a1a;
   }
 }
