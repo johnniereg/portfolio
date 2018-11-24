@@ -4,6 +4,7 @@
 
 .home {
   height: 100vh;
+  background-color: #f2f2f2;
   padding-left: 2rem;
   padding-right: 2rem;
   display: flex;
@@ -16,6 +17,7 @@ header {
 
   .nameplate {
     font-family: $font-stack-primary;
+    color: #0a1a1a;
     letter-spacing: .1em;
     text-transform: lowercase;
   }
@@ -27,12 +29,32 @@ nav {
   justify-content: center;
 
   .nav-item {
-    width: 100%;
+    width: 60%;
+    padding: 0 4rem;
+    margin: 2rem 0;
     text-align: center;
+    background-color: #0a1a1a;
+      border-radius: 4px;
+
+    transition: all 0.3s linear;
+
+    @media screen and (max-width: 768px){
+      background-color: transparent;
+      text-decoration: underline;
+    }
+
+    &:hover {
+      color: #f2f2f2;
+      padding: 0;
+      margin: 0;
+    }
   }
 
   a {
-    font-family: $font-stack-secondary;
+    font-family: $font-stack-primary;
+    font-size: 3rem;
+    color: #0a1a1a;
+    text-decoration: none;
   }
 }
 
@@ -42,5 +64,6 @@ footer {
 
   p {
     font-family: $font-stack-secondary;
+    color: #0a1a1a;
   }
 }
