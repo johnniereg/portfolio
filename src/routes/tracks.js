@@ -44,7 +44,11 @@ class Tracks extends Component {
     let tracks = this.state.tracks;
     let albumChart = this.state.albumCharts;
 
-    let topTenAlbums = albumChart.filter(function(album, index) {
+    let lastTwentyFiveTracks = tracks.filter((track, index) => {
+      return index < 25;
+    });
+
+    let topTenAlbums = albumChart.filter((album, index) => {
       return index < 10;
     });
 
@@ -57,7 +61,7 @@ class Tracks extends Component {
         <main className="listening-habits-container">
           <div className="tracks-container">
             <h2>Recently Played</h2>
-            {tracks.map(function(track, index) {
+            {lastTwentyFiveTracks.map(function(track, index) {
               return (
                 <p key={index}>
                   "{track.name}" by {track.artist.name}
@@ -79,7 +83,13 @@ class Tracks extends Component {
         </main>
 
         <footer>
-          <p>Follow on Spotify</p>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://open.spotify.com/user/johnniereg?si=fd1IAHgbT_GYayAfQ5a--w"
+          >
+            <p>Follow me on Spotify</p>
+          </a>
         </footer>
       </div>
     );
