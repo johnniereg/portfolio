@@ -63,22 +63,19 @@ nav {
   }
 }
 
-.tracks-container {
+.listening-habits-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tracks-container,
+.album-chart-container {
   display: block;
   position: relative;
   max-height: 80vh;
   overflow: scroll;
   text-align: center;
-
-  // &::before {
-  //   content: '';
-  //   position: fixed;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 25%;
-  //   background: linear-gradient(to top, transparent, #f2f2f2 95%);
-  // }
+  width: 50%;
 
   p {
     font-family: $font-stack-primary;

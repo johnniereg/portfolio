@@ -4,17 +4,21 @@ class Tracks extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tracks: []
+      tracks: [],
+      albumCharts: []
     };
   }
 
   componentDidMount() {
-    let proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    this.getRecentTracks();
+    this.getWeeklyTopAlbums();
+  }
+
+  getRecentTracks() {
     let targetUrl =
-      // 'http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=johnniereg&api_key=907c0957fc6f58a0cdc5a95eacadb9bf&format=json&extended=1&limit=200http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=johnniereg&api_key=30ddf0e6d5fcc07ad9eb72f57214dbbd&format=json&extended=1&limit=200&from=1514764800';
       'https://morning-brushlands-94806.herokuapp.com/api/lastfm/recent-tracks';
 
-    fetch(proxyUrl + targetUrl)
+    fetch(targetUrl)
       .then(function(response) {
         return response.json();
       })
@@ -23,24 +27,57 @@ class Tracks extends Component {
       });
   }
 
+  getWeeklyTopAlbums() {
+    let targetUrl =
+      'https://morning-brushlands-94806.herokuapp.com/api/lastfm/weekly-album-chart';
+
+    fetch(targetUrl)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(jsonData => {
+        this.setState({ albumCharts: jsonData.weeklyalbumchart.album });
+      });
+  }
+
   render() {
     let tracks = this.state.tracks;
+    let albumChart = this.state.albumCharts;
+
+    let topTenAlbums = albumChart.filter(function(album, index) {
+      return index < 10;
+    });
 
     return (
       <div className="Tracks">
         <header>
           <h1 className="nameplate">Listening Habits</h1>
         </header>
-        <main className="tracks-container">
-          <h2>Recently Played</h2>
-          {tracks.map(function(track, index) {
-            return (
-              <p key={index}>
-                "{track.name}" by {track.artist.name}
-              </p>
-            );
-          })}
+
+        <main className="listening-habits-container">
+          <div className="tracks-container">
+            <h2>Recently Played</h2>
+            {tracks.map(function(track, index) {
+              return (
+                <p key={index}>
+                  "{track.name}" by {track.artist.name}
+                </p>
+              );
+            })}
+          </div>
+
+          <div className="album-chart-container">
+            <h2>Weekly Album Chart</h2>
+            {topTenAlbums.map((album, index) => {
+              return (
+                <p key={index}>
+                  "{album.name}" by {album.artist[Object.keys(album.artist)[0]]}
+                </p>
+              );
+            })}
+          </div>
         </main>
+
         <footer>
           <p>Follow on Spotify</p>
         </footer>
