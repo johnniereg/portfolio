@@ -97,8 +97,13 @@ footer {
   display: flex;
   justify-content: flex-end;
 
-  p {
+  a {
     font-family: $font-stack-primary;
     color: #0a1a1a;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

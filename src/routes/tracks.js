@@ -83,13 +83,15 @@ class Tracks extends Component {
         </main>
 
         <footer>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://open.spotify.com/user/johnniereg?si=fd1IAHgbT_GYayAfQ5a--w"
-          >
-            <p>Follow me on Spotify</p>
-          </a>
+          <p>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://open.spotify.com/user/johnniereg?si=fd1IAHgbT_GYayAfQ5a--w"
+            >
+              Follow me on Spotify
+            </a>
+          </p>
         </footer>
       </div>
     );
